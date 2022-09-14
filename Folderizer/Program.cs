@@ -1,7 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using Folderizer.Service;
-using Uiorzo;
 
 //var folderPath = @"C:\work";
 
@@ -24,14 +22,14 @@ using Uiorzo;
 //    input = Console.ReadLine();
 //}
 
+using Uiorzo;
+
 var gui = new Uiorzo.Uiorzo();
 
-gui.Draw('#');
-Thread.Sleep(2500);
-gui.Draw('*');
+var list = new ListComponent(10, 10);
+gui.AddComponent(list);
 
-var res = gui.DrawInput();
+var input = new InputComponent();
+gui.AddComponent(input);
 
-Thread.Sleep(5000);
-
-
+gui.DrawGui();
