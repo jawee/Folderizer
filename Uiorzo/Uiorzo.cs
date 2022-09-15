@@ -11,11 +11,24 @@
             _windowWidth = Console.WindowWidth;
             _windowHeight = Console.WindowHeight;
             _components = new List<IComponent>();
+            DrawInitialSize();
         }
 
         public void AddComponent(IComponent component)
         {
             _components.Add(component);
+        }
+
+        private void DrawInitialSize()
+        {
+            for(var j = 0; j < _windowHeight; j++) 
+            {
+                for(var i = 0; i < _windowWidth; i++) {
+                    Console.SetCursorPosition(i,j);
+                    Console.Write(" ");
+                }
+            }
+
         }
 
         public void DrawGui()
